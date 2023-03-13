@@ -40,7 +40,7 @@ final class SFTPTunnel {
             throw new \Exception(message: "Empty host", code: 406);
         }
 
-        if (@fsockopen(hostname: $host, port: $port, timeout: 3) === false) {
+        if (@fsockopen(hostname: $host, port: $port,error_code: $errorCode,error_message: $errorMessage, timeout: 3) === false) {
             throw new \Exception(message: "Address `{$host}:{$port}` offline", code: 405);
         }
 
